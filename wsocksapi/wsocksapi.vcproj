@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="wsocksapi"
+	ProjectGUID="{80FADC43-E542-426C-97C6-F0B99D56852F}"
+	RootNamespace="wsocksapi"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK"
+	Keyword="MFCDLLProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Static Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			CharacterSet="0">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories=".\"
+				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL,MAKE_WSOCKSAPI,VS2003"
+				RuntimeLibrary="2"
+				TreatWChar_tAsBuiltInType="FALSE"
+				UsePrecompiledHeader="3"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="TRUE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/$(ProjectName)S.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="FALSE"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="xcopy /y/d &quot;Static Release\wsocksapiS.lib&quot; ..\ReleaseBuilds\wsocksapi
+xcopy /y/d wsocksapi.h ..\ReleaseBuilds\wsocksapi
+xcopy /y/d wsbuffer.h ..\ReleaseBuilds\wsocksapi
+xcopy /y/d wstring.h ..\ReleaseBuilds\wsocksapi
+xcopy /y/d ..\iqclientapi\iqclientapi.h ..\ReleaseBuilds\wsocksapi
+xcopy /y/d myrt.h ..\ReleaseBuilds\wsocksapi
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Static Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			CharacterSet="0">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories=".\"
+				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL,MAKE_WSOCKSAPI,VS2003"
+				MinimalRebuild="TRUE"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				TreatWChar_tAsBuiltInType="FALSE"
+				UsePrecompiledHeader="3"
+				ProgramDataBaseFileName="$(IntDir)/wsocksapiSD.pdb"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="TRUE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/$(ProjectName)SD.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="FALSE"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="xcopy /y/d &quot;Static Debug\wsocksapiSD.lib&quot; ..\ReleaseBuilds\wsocksapi
+xcopy /y/d &quot;Static Debug\wsocksapiSD.pdb&quot; ..\ReleaseBuilds\wsocksapi
+xcopy /y/d wsocksapi.h ..\ReleaseBuilds\wsocksapi
+xcopy /y/d wsbuffer.h ..\ReleaseBuilds\wsocksapi
+xcopy /y/d wstring.h ..\ReleaseBuilds\wsocksapi
+xcopy /y/d ..\iqclientapi\iqclientapi.h ..\ReleaseBuilds\wsocksapi
+xcopy /y/d myrt.h ..\ReleaseBuilds\wsocksapi
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath=".\myrt.cpp">
+			</File>
+			<File
+				RelativePath=".\stdafx.cpp">
+				<FileConfiguration
+					Name="Static Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Static Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\wsbuffer.cpp">
+			</File>
+			<File
+				RelativePath=".\wsocksapi.cpp">
+			</File>
+			<File
+				RelativePath=".\wstring.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath=".\myrt.h">
+			</File>
+			<File
+				RelativePath=".\Resource.h">
+			</File>
+			<File
+				RelativePath=".\stdafx.h">
+			</File>
+			<File
+				RelativePath=".\wsbuffer.h">
+			</File>
+			<File
+				RelativePath=".\wsocksapi.h">
+			</File>
+			<File
+				RelativePath=".\wsockshost.h">
+			</File>
+			<File
+				RelativePath=".\wstring.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File
+				RelativePath=".\wsocksapi.rc">
+				<FileConfiguration
+					Name="Static Release|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCResourceCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Static Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCResourceCompilerTool"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\wsocksapi.rc2">
+				<FileConfiguration
+					Name="Static Release|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Static Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
