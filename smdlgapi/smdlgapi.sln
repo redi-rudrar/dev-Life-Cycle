@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smdlgapi", "smdlgapi.vcxproj", "{16410118-6B72-4FFE-87AA-FAED452732AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Static Debug|x64 = Static Debug|x64
+		Static Debug|x86 = Static Debug|x86
+		Static Release|x64 = Static Release|x64
+		Static Release|x86 = Static Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16410118-6B72-4FFE-87AA-FAED452732AC}.Static Debug|x64.ActiveCfg = Static Debug|x64
+		{16410118-6B72-4FFE-87AA-FAED452732AC}.Static Debug|x64.Build.0 = Static Debug|x64
+		{16410118-6B72-4FFE-87AA-FAED452732AC}.Static Debug|x86.ActiveCfg = Static Debug|Win32
+		{16410118-6B72-4FFE-87AA-FAED452732AC}.Static Debug|x86.Build.0 = Static Debug|Win32
+		{16410118-6B72-4FFE-87AA-FAED452732AC}.Static Release|x64.ActiveCfg = Static Release|x64
+		{16410118-6B72-4FFE-87AA-FAED452732AC}.Static Release|x64.Build.0 = Static Release|x64
+		{16410118-6B72-4FFE-87AA-FAED452732AC}.Static Release|x86.ActiveCfg = Static Release|Win32
+		{16410118-6B72-4FFE-87AA-FAED452732AC}.Static Release|x86.Build.0 = Static Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0DC7206-7515-4101-A312-E93A07D00F4F}
+	EndGlobalSection
+EndGlobal
