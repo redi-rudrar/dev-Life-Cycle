@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsocksapi", "wsocksapi\wsocksapi.vcproj", "{80FADC43-E542-426C-97C6-F0B99D56852F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404} = {8D4E192C-EA69-42C3-BD46-B83A4EAE7404}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idfcodec", "idfcodec\idfcodec.vcproj", "{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectUniqueName0 = wsocksapi\\wsocksapi.vcproj
+		SccProjectName0 = \u0022$/BackEnd/Feed/Dev/IQApi\u0022,\u0020ZVVEAAAA
+		SccLocalPath0 = wsocksapi
+		CanCheckoutShared = false
+		SccLocalPath1 = .
+		CanCheckoutShared = false
+		SolutionUniqueID = {4D92C682-B3B8-4F7E-8438-9BC319C0E0D5}
+		SccProjectUniqueName2 = idfcodec\\idfcodec.vcproj
+		SccLocalPath2 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection2 = idfcodec\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+		Static Debug = Static Debug
+		Static Release = Static Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Debug.ActiveCfg = Debug|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Debug.Build.0 = Debug|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Release.ActiveCfg = Release|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Release.Build.0 = Release|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Static Debug.ActiveCfg = Debug|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Static Debug.Build.0 = Debug|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Static Release.ActiveCfg = Release|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Static Release.Build.0 = Release|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Debug.ActiveCfg = Debug|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Debug.Build.0 = Debug|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Release.ActiveCfg = Release|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Release.Build.0 = Release|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Static Debug.ActiveCfg = Static Debug|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Static Debug.Build.0 = Static Debug|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Static Release.ActiveCfg = Static Release|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Static Release.Build.0 = Static Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

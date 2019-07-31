@@ -1,0 +1,6 @@
+; wsocksapi.def : Declares the module parameters for the DLL.
+
+LIBRARY      "wsocksapiD"
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsockshost", "wsockshost.vcxproj", "{5FB08F42-FB4A-4991-8249-7B59F7275293}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Static Debug|x64 = Static Debug|x64
+		Static Debug|x86 = Static Debug|x86
+		Static Release|x64 = Static Release|x64
+		Static Release|x86 = Static Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Static Debug|x64.ActiveCfg = Static Debug|x64
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Static Debug|x64.Build.0 = Static Debug|x64
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Static Debug|x86.ActiveCfg = Static Debug|Win32
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Static Debug|x86.Build.0 = Static Debug|Win32
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Static Release|x64.ActiveCfg = Static Debug|x64
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Static Release|x64.Build.0 = Static Debug|x64
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Static Release|x86.ActiveCfg = Static Release|Win32
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Static Release|x86.Build.0 = Static Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45228821-2AF6-4B69-B969-2B4347301F5E}
+	EndGlobalSection
+EndGlobal
