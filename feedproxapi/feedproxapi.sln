@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "feedproxapi", "feedproxapi.vcxproj", "{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		Static Debug|x64 = Static Debug|x64
+		Static Debug|x86 = Static Debug|x86
+		Static Release|x64 = Static Release|x64
+		Static Release|x86 = Static Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Debug|x64.ActiveCfg = Debug|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Debug|x64.Build.0 = Debug|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Debug|x86.ActiveCfg = Static Debug|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Debug|x86.Build.0 = Static Debug|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Release|x64.ActiveCfg = Release|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Release|x64.Build.0 = Release|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Release|x86.ActiveCfg = Release|Win32
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Release|x86.Build.0 = Release|Win32
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Static Debug|x64.ActiveCfg = Static Debug|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Static Debug|x64.Build.0 = Static Debug|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Static Debug|x86.ActiveCfg = Static Debug|Win32
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Static Debug|x86.Build.0 = Static Debug|Win32
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Static Release|x64.ActiveCfg = Static Release|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Static Release|x64.Build.0 = Static Release|x64
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Static Release|x86.ActiveCfg = Static Release|Win32
+		{8A5CC89E-79DE-4322-A3A3-143050E8EB8B}.Static Release|x86.Build.0 = Static Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6127B39-D154-466F-B8B4-F4BEF15F06DD}
+	EndGlobalSection
+EndGlobal
