@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ViewServer.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timeidx.cpp">
+      <Filter>Infrastructure\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mhindex.cpp">
+      <Filter>Infrastructure\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memindex.cpp">
+      <Filter>Infrastructure\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sfix.cpp">
+      <Filter>Infrastructure\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mcfilter.cpp">
+      <Filter>Infrastructure\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsorder.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsquery.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsquery2.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsquery3.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsquerylive.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vssysmon.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsoledb.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsdist.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsaway.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tbackup.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="smpdrop.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iqflow.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dnsrepl.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cldrop.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exprtok.cpp">
+      <Filter>Infrastructure\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="feedtask.cpp">
+      <Filter>Infrastructure\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="itf.cpp">
+      <Filter>Infrastructure\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsemit.cpp">
+      <Filter>BusinessLogic\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewServer.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="build.h">
+      <Filter>Application\Legacy Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dbcommon.h">
+      <Filter>Application\Legacy Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MESSAGE.H">
+      <Filter>Application\Legacy Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sizes.h">
+      <Filter>Application\Legacy Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vsdefs.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timeidx.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mrucache.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memindex.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sfix.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vsorder.h">
+      <Filter>BusinessLogic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vsquery.h">
+      <Filter>BusinessLogic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vsquerylive.h">
+      <Filter>BusinessLogic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vsoledb.h">
+      <Filter>BusinessLogic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iqosOrder.h">
+      <Filter>BusinessLogic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IQClServer.h">
+      <Filter>BusinessLogic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iqflow.h">
+      <Filter>BusinessLogic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hash_fun.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hashtable.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exprtok.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="feedtask.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fixstats.h">
+      <Filter>Infrastructure\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vsdist.h">
+      <Filter>BusinessLogic\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ViewServer.rc2">
+      <Filter>Application\Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt">
+      <Filter>Application</Filter>
+    </None>
+    <None Include="hash_map">
+      <Filter>Infrastructure\Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Application">
+      <UniqueIdentifier>{2829673f-2731-4bfd-ab39-b74f7f28c4c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UserInterface">
+      <UniqueIdentifier>{a399586a-7219-434a-a4f5-1b2c6295c73b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Presentation">
+      <UniqueIdentifier>{af7ec4d2-77a5-42d5-ac30-7a84fa85276c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Infrastructure">
+      <UniqueIdentifier>{a4bd5386-09b1-46be-bba1-acd896642dd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BusinessLogic">
+      <UniqueIdentifier>{2db3e9c9-7e05-409b-8fcc-dfe4683e04b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Header Files">
+      <UniqueIdentifier>{46ef1a7e-e20d-48ee-a1c6-b53cb42b66d0}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Application\Legacy Files">
+      <UniqueIdentifier>{67df78b2-e3cd-4c1d-be85-194eba402615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Resource Files">
+      <UniqueIdentifier>{ec48d41d-933e-424a-bb48-6e4e697c85ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Source Files">
+      <UniqueIdentifier>{9a2386c6-08e8-491a-a6d7-04076de670bc}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Infrastructure\Header Files">
+      <UniqueIdentifier>{132e6cf4-1538-4ea3-bfc8-68014df219c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Infrastructure\Source Files">
+      <UniqueIdentifier>{89258a74-3c63-4cba-abae-2c155840da6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BusinessLogic\Header Files">
+      <UniqueIdentifier>{6d96438d-a08d-4158-8978-050b070c168b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BusinessLogic\Source Files">
+      <UniqueIdentifier>{39d0b00c-ead6-431a-9255-1a66549ecdac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ViewServer.rc">
+      <Filter>Application\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
