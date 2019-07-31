@@ -1,0 +1,85 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IQMatrix", "IQMatrix\IQMatrix.vcproj", "{4D08EEB4-0B85-4280-BD90-19877A7B857D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51C4C225-9BE7-4537-925E-9D9C6FF36E69} = {51C4C225-9BE7-4537-925E-9D9C6FF36E69}
+		{5FB08F42-FB4A-4991-8249-7B59F7275293} = {5FB08F42-FB4A-4991-8249-7B59F7275293}
+		{80FADC43-E542-426C-97C6-F0B99D56852F} = {80FADC43-E542-426C-97C6-F0B99D56852F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IQMatrixConsole", "IQMatrixConsole\IQMatrixConsole.vcproj", "{51C4C225-9BE7-4537-925E-9D9C6FF36E69}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5FB08F42-FB4A-4991-8249-7B59F7275293} = {5FB08F42-FB4A-4991-8249-7B59F7275293}
+		{80FADC43-E542-426C-97C6-F0B99D56852F} = {80FADC43-E542-426C-97C6-F0B99D56852F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idfcodec", "idfcodec\idfcodec.vcproj", "{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsocksapi", "wsocksapi\wsocksapi.vcproj", "{80FADC43-E542-426C-97C6-F0B99D56852F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404} = {8D4E192C-EA69-42C3-BD46-B83A4EAE7404}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsockshost", "wsockshost\wsockshost.vcproj", "{5FB08F42-FB4A-4991-8249-7B59F7275293}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404} = {8D4E192C-EA69-42C3-BD46-B83A4EAE7404}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccLocalPath0 = .
+		CanCheckoutShared = false
+		SolutionUniqueID = {91B1165A-938F-46D4-8630-E42BCDB79F81}
+		SccProjectUniqueName1 = IQMatrixConsole\\IQMatrixConsole.vcproj
+		SccProjectName1 = \u0022$/BackEnd/Feed/Dev/IQApi/IQMatrixConsole\u0022,\u0020DGWEAAAA
+		SccLocalPath1 = IQMatrixConsole
+		CanCheckoutShared = false
+		SccProjectUniqueName2 = idfcodec\\idfcodec.vcproj
+		SccProjectName2 = \u0022$/BackEnd/Feed/Dev/IQApi/idfcodec\u0022,\u0020IYVEAAAA
+		SccLocalPath2 = idfcodec
+		CanCheckoutShared = false
+		SccProjectUniqueName3 = wsocksapi\\wsocksapi.vcproj
+		SccProjectName3 = \u0022$/BackEnd/Feed/Dev/IQApi/wsocksapi\u0022,\u0020DWVEAAAA
+		SccLocalPath3 = wsocksapi
+		CanCheckoutShared = false
+		SccProjectUniqueName4 = IQMatrix\\IQMatrix.vcproj
+		SccLocalPath4 = IQMatrix
+		CanCheckoutShared = false
+		SccProjectUniqueName5 = wsockshost\\wsockshost.vcproj
+		SccProjectName5 = \u0022$/BackEnd/Feed/Dev/IQApi/wsockshost\u0022,\u0020QFTFAAAA
+		SccLocalPath5 = wsockshost
+		CanCheckoutShared = false
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4D08EEB4-0B85-4280-BD90-19877A7B857D}.Debug.ActiveCfg = Debug|Win32
+		{4D08EEB4-0B85-4280-BD90-19877A7B857D}.Debug.Build.0 = Debug|Win32
+		{4D08EEB4-0B85-4280-BD90-19877A7B857D}.Release.ActiveCfg = Release|Win32
+		{4D08EEB4-0B85-4280-BD90-19877A7B857D}.Release.Build.0 = Release|Win32
+		{51C4C225-9BE7-4537-925E-9D9C6FF36E69}.Debug.ActiveCfg = Debug|Win32
+		{51C4C225-9BE7-4537-925E-9D9C6FF36E69}.Debug.Build.0 = Debug|Win32
+		{51C4C225-9BE7-4537-925E-9D9C6FF36E69}.Release.ActiveCfg = Release|Win32
+		{51C4C225-9BE7-4537-925E-9D9C6FF36E69}.Release.Build.0 = Release|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Debug.ActiveCfg = Static Debug|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Debug.Build.0 = Static Debug|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Release.ActiveCfg = Static Release|Win32
+		{8D4E192C-EA69-42C3-BD46-B83A4EAE7404}.Release.Build.0 = Static Release|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Debug.ActiveCfg = Static Debug|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Debug.Build.0 = Static Debug|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Release.ActiveCfg = Static Release|Win32
+		{80FADC43-E542-426C-97C6-F0B99D56852F}.Release.Build.0 = Static Release|Win32
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Debug.ActiveCfg = Static Debug|Win32
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Debug.Build.0 = Static Debug|Win32
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Release.ActiveCfg = Static Release|Win32
+		{5FB08F42-FB4A-4991-8249-7B59F7275293}.Release.Build.0 = Static Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
