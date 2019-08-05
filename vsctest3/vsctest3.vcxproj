@@ -88,8 +88,8 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>xcopy /y/d "Debug\VSClientD.exe" ..\ReleaseBuilds32\Debug32\vsctest3
-xcopy /y/d "..\zlib\DES3.DLL"  ..\ReleaseBuilds32\Debug32\vsctest3</Command>
+      <Command>xcopy /y/d "Debug\VSClientD.exe" ..\vsctest3-Executables
+xcopy /y/d "..\zlib\DES3.DLL"  ..\vsctest3-Executables</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,8 +124,8 @@ xcopy /y/d "..\zlib\DES3.DLL"  ..\ReleaseBuilds32\Debug32\vsctest3</Command>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>xcopy /y/d "Release\VSClient.exe" ..\ReleaseBuilds32\Release32\vsctest3
-xcopy /y/d "..\zlib\DES3.DLL"  ..\ReleaseBuilds32\Release32\vsctest3</Command>
+      <Command>xcopy /y/d "Release\VSClient.exe" ..\vsctest3-Executables
+xcopy /y/d "..\zlib\DES3.DLL"  ..\vsctest3-Executables</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

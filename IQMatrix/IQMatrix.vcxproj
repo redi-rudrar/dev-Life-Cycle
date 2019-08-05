@@ -137,8 +137,8 @@ xcopy /y/d Debug\IQMatrixD.pdb C:\run\iqapi</Command>
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <PostBuildEvent>
-      <Command>xcopy /y/d Debug\IQMatrixD.exe ..\ReleaseBuilds32\wsocksapi
-xcopy /y/d Debug\IQMatrixD.pdb ..\ReleaseBuilds32\wsocksapi</Command>
+      <Command>xcopy /y/d Debug\IQMatrixD.exe  ..\IQMatrix-Executables
+</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -163,7 +163,7 @@ xcopy /y/d Debug\IQMatrixD.pdb ..\ReleaseBuilds32\wsocksapi</Command>
       <Outputs>C:\run\iqapi\IQMatrixD.exe;%(Outputs)</Outputs>
     </CustomBuildStep>
     <Link>
-      <AdditionalDependencies>..\ReleaseBuilds64\Debug64\smdlgapi\smdlgapiSD.lib;..\zlib\Debug\zlib2D.lib;..\zlib\des3.lib;atls.lib;msvcprtd.lib;msvcrtd.lib;kernel32.lib;user32.lib;shell32.lib;shlwapi.lib;ws2_32.lib;winmm.lib;rpcrt4.lib;oldnames.lib;oleaut32.lib;comctl32.lib;ole32.lib;advapi32.lib;gdi32.lib;Iphlpapi.lib;DbgHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\ReleaseBuilds64\Debug64\smdlgapi\smdlgapiSD.lib;..\zlib\zlib2D.lib;..\zlib\des3.lib;atls.lib;msvcprtd.lib;msvcrtd.lib;kernel32.lib;user32.lib;shell32.lib;shlwapi.lib;ws2_32.lib;winmm.lib;rpcrt4.lib;oldnames.lib;oleaut32.lib;comctl32.lib;ole32.lib;advapi32.lib;gdi32.lib;Iphlpapi.lib;DbgHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName)D.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -176,7 +176,7 @@ xcopy /y/d Debug\IQMatrixD.pdb ..\ReleaseBuilds32\wsocksapi</Command>
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <PostBuildEvent>
-      <Command>xcopy /y/d Debug\IQMatrixD.exe ..\ReleaseBuilds64\Debug64\IQMatrix</Command>
+      <Command>xcopy /y/d Debug\IQMatrixD.exe  ..\IQMatrix-Executables</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -222,8 +222,8 @@ xcopy /y/d Release\IQMatrix.pdb C:\run\iqapi</Command>
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <PostBuildEvent>
-      <Command>xcopy /y/d Release\IQMatrix.exe ..\ReleaseBuilds32\wsocksapi
-xcopy /y/d Release\IQMatrix.pdb ..\ReleaseBuilds32\wsocksapi</Command>
+      <Command>xcopy /y/d Release\IQMatrix.exe ..\IQMatrix-Executables
+</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -261,7 +261,7 @@ xcopy /y/d Release\IQMatrix.pdb ..\ReleaseBuilds32\wsocksapi</Command>
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <PostBuildEvent>
-      <Command>xcopy /y/d Release\IQMatrix.exe ..\ReleaseBuilds64\Release64\IQMatrix</Command>
+      <Command>xcopy /y/d Release\IQMatrix.exe  ..\IQMatrix-Executables</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>

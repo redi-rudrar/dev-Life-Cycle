@@ -134,7 +134,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <PostBuildEvent>
-      <Command>xcopy /y/d "Debug\ViewServerD.dll" ..\ReleaseBuilds32\Debug32\IQMatrix</Command>
+      <Command>xcopy /y/d "Debug\ViewServerD.dll"  ..\IQMatrix-Executables</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -169,7 +169,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <PostBuildEvent>
-      <Command>xcopy /y/d "Debug\ViewServerD.dll" ..\ReleaseBuilds64\Debug64\IQMatrix</Command>
+      <Command>xcopy /y/d "Debug\ViewServerD.dll" ..\IQMatrix-Executables</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -206,7 +206,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <PostBuildEvent>
-      <Command>xcopy /y/d "Release\ViewServer.dll" ..\ReleaseBuilds32\Release32\IQMatrix</Command>
+      <Command>xcopy /y/d "Release\ViewServer.dll" ..\IQMatrix-Executables</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -244,7 +244,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <PostBuildEvent>
-      <Command>xcopy /y/d "Release\ViewServer.dll" ..\ReleaseBuilds64\Release64\IQMatrix</Command>
+      <Command>xcopy /y/d "Release\ViewServer.dll"  ..\IQMatrix-Executables</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
