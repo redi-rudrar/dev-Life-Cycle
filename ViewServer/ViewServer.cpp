@@ -163,6 +163,7 @@ ViewServer::ViewServer()
 	,HISTIMP_HUB_PATHS()
 	,HISTORIC_ONDEMAND(true)
 	,HISTORIC_BEGINDATE(0)
+	, importHistoricFiles(false)
 #endif
 #ifdef REDIOLEDBCON
 	,IMPORT_REDIBUS(false)
@@ -1299,18 +1300,22 @@ int ViewServer::LoadSetupIni()
 		else if(strcmp(sname,"HISTORIC_DAYS")==0)
 		{
 			odb.HISTORIC_DAYS=atoi(value);
+			WSLogEvent("HISTORIC_DAYS: %d",odb.HISTORIC_DAYS);
 		}
 		else if(strcmp(sname,"HISTIMP_TIME")==0)
 		{
 			HISTIMP_TIME=atoi(value);
+			WSLogEvent("HISTIMP_TIME: %d", HISTIMP_TIME);
 		}
 		else if(strcmp(sname,"HISTIMP_DIST_PATHS")==0)
 		{
 			HISTIMP_DIST_PATHS=value;
+			WSLogEvent("HISTIMP_DIST_PATHS: %s", HISTIMP_DIST_PATHS.c_str());
 		}
 		else if(strcmp(sname,"HISTIMP_HUB_PATHS")==0)
 		{
 			HISTIMP_HUB_PATHS=value;
+			WSLogEvent("HISTIMP_HUB_PATHS: %s", HISTIMP_HUB_PATHS.c_str());
 		}
 		else if(strcmp(sname,"HISTIMP_INSTANCE")==0)
 		{
@@ -1326,14 +1331,17 @@ int ViewServer::LoadSetupIni()
 				};
 			}
 			nhistImports.push_back(import);
+			WSLogEvent("HISTIMP_INSTANCE HISTIMP_TIME: %d HISTIMP_DIST_PATH:%s HISTIMP_HUB_PATH:%s", nhistImports.back().HISTIMP_TIME, nhistImports.back().HISTIMP_DIST_PATH.c_str(), nhistImports.back().HISTIMP_HUB_PATH.c_str());
 		}
 		else if(strcmp(sname,"HISTORIC_ONDEMAND")==0)
 		{
 			HISTORIC_ONDEMAND=atoi(value)?true:false;
+			WSLogEvent("HISTORIC_ONDEMAND: %d", HISTORIC_ONDEMAND);
 		}
 		else if(strcmp(sname,"HISTORIC_BEGINDATE")==0)
 		{
 			HISTORIC_BEGINDATE=atoi(value);
+			WSLogEvent("HISTORIC_BEGINDATE: %d", HISTORIC_BEGINDATE);
 		}
 	#endif
 	#ifdef REDIOLEDBCON
@@ -1583,9 +1591,9 @@ int ViewServer::LoadSystemConfig()
 	ACCTMAP nacmap_new;
 
     bool new_startup = (asmap.size() == 0);     // Mark if this function is called during a re-start
-    APPSYSMAP& nasmap = new_startup ? asmap : nasmap_new;
-    APPINSTMAP& naimap = new_startup ? aimap : naimap_new;
-    ACCTMAP& nacmap = new_startup ? acmap : nacmap_new;
+    APPSYSMAP& nasmap = (new_startup || importHistoricFiles ) ? asmap : nasmap_new;
+    APPINSTMAP& naimap = (new_startup || importHistoricFiles) ? aimap : naimap_new;
+    ACCTMAP& nacmap = (new_startup || importHistoricFiles ) ? acmap : nacmap_new;
 
 	if(ReadAppSystemsIni(nasmap,naimap)<0)
 		goto Error;
@@ -1630,7 +1638,7 @@ int ViewServer::LoadSystemConfig()
 		AppSystem *nasys=nait->second;
 		// Initialize new app instances only
 		APPSYSMAP::iterator ait=asmap.find(nasys->skey);
-		if(new_startup || ait==asmap.end())
+		if(new_startup || ait==asmap.end() || importHistoricFiles)
 		{
 			// TODO: What if this takes too long?
 			char dbdir[MAX_PATH]={0};
@@ -1643,32 +1651,53 @@ int ViewServer::LoadSystemConfig()
 		#ifdef MULTI_DAY_HIST
 			if(odb.HISTORIC_DAYS>0)
 			{
-				nasys->odb.CopySettings(this->odb,nasys->sname.c_str());
-				int ndays=odb.HISTORIC_DAYS;
-				for(int d=1;(ndays>0)&&(d<=odb.HISTORIC_DAYS);d++)
+				nasys->odb.CopySettings(this->odb, nasys->sname.c_str());
+				int ndays = odb.HISTORIC_DAYS;
+				if (importHistoricFiles)
 				{
-					int sdate=CalcTPlusDate(odb.wsdate,-d);
-					sprintf(dbname,"%s_%08d.dat",nasys->sname.c_str(),sdate);
-					OrderDB *pdb=new OrderDB();
+					int sdate = CalcTPlusDate(odb.wsdate, 0);
+					sprintf(dbname, "%s_%08d.dat", nasys->sname.c_str(), sdate);
+					OrderDB *pdb = new OrderDB();
 					pdb->Init(this);
-					pdb->CopySettings(this->odb,nasys->sname.c_str());
+					pdb->CopySettings(this->odb, nasys->sname.c_str());
 					nasys->odblist.push_back(pdb);
-					if(HISTORIC_ONDEMAND)
+					if (HISTORIC_ONDEMAND)
 					{
-						pdb->DelayInit(this,dbdir,dbname,sdate,odb.readonly,dbLoadCxl,nasys);
-						ndays--;
+						pdb->DelayInit(this, dbdir, dbname, sdate, odb.readonly, dbLoadCxl, nasys);
 					}
-					else if(pdb->Init(this,dbdir,dbname,sdate,odb.readonly,dbLoadCxl,nasys)<0)
+					else if (pdb->Init(this, dbdir, dbname, sdate, odb.readonly, dbLoadCxl, nasys) < 0)
 					{
 						nasys->odblist.pop_back();
-						delete pdb; pdb=0;
+						delete pdb; pdb = 0;
 					}
-					else
+				}
+				else
+				{
+					for (int d = 1; (ndays > 0) && (d <= odb.HISTORIC_DAYS); d++)
 					{
-						ndays--;
-						//// Wet the line
-						//VSOrder *porder=pdb->AllocOrder();
-						//pdb->FreeOrder(porder); porder=0;
+						int sdate = CalcTPlusDate(odb.wsdate, -d);
+						sprintf(dbname, "%s_%08d.dat", nasys->sname.c_str(), sdate);
+						OrderDB *pdb = new OrderDB();
+						pdb->Init(this);
+						pdb->CopySettings(this->odb, nasys->sname.c_str());
+						nasys->odblist.push_back(pdb);
+						if (HISTORIC_ONDEMAND)
+						{
+							pdb->DelayInit(this, dbdir, dbname, sdate, odb.readonly, dbLoadCxl, nasys);
+							ndays--;
+						}
+						else if (pdb->Init(this, dbdir, dbname, sdate, odb.readonly, dbLoadCxl, nasys) < 0)
+						{
+							nasys->odblist.pop_back();
+							delete pdb; pdb = 0;
+						}
+						else
+						{
+							ndays--;
+							//// Wet the line
+							//VSOrder *porder=pdb->AllocOrder();
+							//pdb->FreeOrder(porder); porder=0;
+						}
 					}
 				}
 			}
@@ -1706,7 +1735,7 @@ int ViewServer::LoadSystemConfig()
 	}
 
 	// Merge old systems and instances into the new list before we swap
-	for(APPSYSMAP::iterator ait=asmap.begin();ait!=asmap.end()&&!new_startup;ait++)
+	for(APPSYSMAP::iterator ait=asmap.begin();ait!=asmap.end()&&!new_startup&&!importHistoricFiles;ait++)
 	{
 		AppSystem *asys=ait->second;
 		APPSYSMAP::iterator nait=nasmap.find(asys->skey);
@@ -1793,7 +1822,7 @@ int ViewServer::LoadSystemConfig()
 		Account *nacc=nait->second;
 		// Initialize new accounts only
 		ACCTMAP::iterator ait=acmap.find(nacc->AcctName);
-		if(new_startup || ait==acmap.end())
+		if(new_startup || ait==acmap.end() || importHistoricFiles)
 		{
 			if((nacc->AcctType!="AppSystem")&&(nacc->AcctType!="AppInstance"))
 				WSLogEvent("Loaded account(%s,%s).",nacc->AcctName.c_str(),nacc->AcctType.c_str());
@@ -1836,8 +1865,8 @@ int ViewServer::LoadSystemConfig()
 	//}
 
 	// Swap the config
-    if(!new_startup)
-    {
+    if(!new_startup && !importHistoricFiles)
+	{
         asmap.swap(nasmap);
         nasmap.clear();
         aimap.swap(naimap);
@@ -3116,13 +3145,21 @@ void ViewServer::WSTimeChange()
 #ifdef MULTI_DAY_HIST
 	if(odb.HISTORIC_DAYS>0)
 	{
-		if((HISTIMP_TIME>0)&&(HISTIMP_TIME==WSTime))
-			ImportHistoricFiles(WSDate,0);
-		for(list<HistImport>::iterator hit=histImports.begin();hit!=histImports.end();hit++)
+		if ((HISTIMP_TIME > 0) && (HISTIMP_TIME == WSTime))
 		{
-			HistImport& import=*hit;
-			if((import.HISTIMP_TIME>0)&&(import.HISTIMP_TIME==WSTime))
-				ImportHistoricFiles(WSDate,&import);
+			ImportHistoricFiles(WSDate); 
+			importHistoricFiles = true;
+			DBLoadThread();
+		}
+		for (list<HistImport>::iterator hit = histImports.begin(); hit != histImports.end(); hit++)
+		{
+			HistImport& import = *hit;
+			if ((import.HISTIMP_TIME > 0) && (import.HISTIMP_TIME == WSTime))
+			{
+				ImportHistoricFiles(WSDate, &import);
+				importHistoricFiles = true;
+				DBLoadThread();
+			}
 		}
 	}
 #endif
@@ -4943,13 +4980,23 @@ int ViewServer::OpenDetailFiles()
 		if(odb.HISTORIC_DAYS>0)
 		{
 			int ndays=odb.HISTORIC_DAYS;
-			for(int d=1;(ndays>0)&&(d<=odb.HISTORIC_DAYS);d++)
+			if (importHistoricFiles)
 			{
-				int sdate=CalcTPlusDate(odb.wsdate,-d);
-				if(sdate<HISTORIC_BEGINDATE)
-					break;
-				if(!odb.OpenExtFile(sdate,HISTORIC_ONDEMAND))
+				int sdate = CalcTPlusDate(odb.wsdate, 0);
+				if (!odb.OpenExtFile(sdate, HISTORIC_ONDEMAND))
 					odb.CloseExtFile();
+				importHistoricFiles = false;
+			}
+			else
+			{
+				for (int d = 1; (ndays > 0) && (d <= odb.HISTORIC_DAYS); d++)
+				{
+					int sdate = CalcTPlusDate(odb.wsdate, -d);
+					if (sdate < HISTORIC_BEGINDATE)
+						break;
+					if (!odb.OpenExtFile(sdate, HISTORIC_ONDEMAND))
+						odb.CloseExtFile();
+				}
 			}
 		}
 		else

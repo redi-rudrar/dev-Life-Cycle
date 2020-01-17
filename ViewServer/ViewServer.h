@@ -566,6 +566,7 @@ protected:
 	string HISTIMP_HUB_PATHS;// Where to get .dat files
 	bool HISTORIC_ONDEMAND; // On-demand load of indices
 	int HISTORIC_BEGINDATE;	// Earliest date for history
+	bool importHistoricFiles;//This flag is set when current day Historical file is imported and loaded into memory
 #endif
 #ifdef REDIOLEDBCON
 	bool IMPORT_REDIBUS;	// 1 to schedule import tasks from redibus.ini
